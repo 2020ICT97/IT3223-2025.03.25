@@ -136,3 +136,14 @@ SET password FOR 'student1'@'localhost' = password('xyz456');
 ```sql
 UPDATE USER SET host='vau.ac.lk' WHERE user='student1' AND host='localhost';
 ```
+
+## Privileges
+```sql
+SHOW GRANTS FOR 'NewAdmin'@'localhost';
+```
+```sql
+SHOW GRANTS FOR 'student1'@'localhost';
+```
+```sql
+FLUSH privileges;
+```
