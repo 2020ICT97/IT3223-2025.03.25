@@ -75,6 +75,31 @@ mysql -u admin -p
 UPDATE USER SET user='NewAdmin' WHERE user='admin';
 ```
 ```sql
+SELECT user, host, password FROM user;
+```
+```
++----------+-----------+-------------------------------------------+
+| User     | Host      | Password                                  |
++----------+-----------+-------------------------------------------+
+| root     | localhost |                                           |
+| NewAdmin | localhost | *5C923DF43CBBF31AA3B451CC68A9CB894BB4D726 |
+| root     | 127.0.0.1 |                                           |
+| root     | ::1       |                                           |
+| pma      | localhost |                                           |
+| student  | localhost | *E7E2131E644A0971A307B62EBF638E415D5CC865 |
++----------+-----------+-------------------------------------------+
+```
+```sql
+FLUSH privileges;
+```
+```sql
+ALTER USER 'NewAdmin'@'localhost' IDENTIFIED BY 'abc1234';
+```
+```
+mysql -u NewAdmin -p
+```
+---
+```sql
 UPDATE USER SET user='student1' WHERE user='student';
 ```
 ```sql
@@ -92,10 +117,9 @@ SELECT user, host, password FROM user;
 | student1 | localhost | *E7E2131E644A0971A307B62EBF638E415D5CC865 |
 +----------+-----------+-------------------------------------------+
 ```
-
 ```sql
 FLUSH privileges;
 ```
 ```sql
-ALTER USER 'NewAdmin'@'localhost' IDENTIFIED BY 'abc1234';
+ALTER USER 'student1'@'localhost' IDENTIFIED BY 'xyz45';
 ```
