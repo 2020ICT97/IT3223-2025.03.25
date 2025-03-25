@@ -123,3 +123,11 @@ FLUSH privileges;
 ```sql
 ALTER USER 'student1'@'localhost' IDENTIFIED BY 'xyz45';
 ```
+```
+mysql -u student1 -p
+```
+
+### Update user password
+```sql
+SET password FOR 'student1'@'localhost' = password('xyz456');
+```
