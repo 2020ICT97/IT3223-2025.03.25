@@ -131,3 +131,8 @@ mysql -u student1 -p
 ```sql
 SET password FOR 'student1'@'localhost' = password('xyz456');
 ```
+
+### Update user host
+```sql
+UPDATE USER SET host='vau.ac.lk' WHERE user='student1' AND host='localhost';
+```
